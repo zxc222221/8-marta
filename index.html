@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>С 8 марта ❤️</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial;
+background:linear-gradient(135deg,#ff9a9e,#fad0c4);
+color:white;
+text-align:center;
+overflow-x:hidden;
+}
+
+/* экран выбора */
+
+#intro{
+position:fixed;
+width:100%;
+height:100%;
+background:#000;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+z-index:10;
+}
+
+.mainPhoto{
+width:280px;
+height:280px;
+object-fit:cover;
+border-radius:50%;
+box-shadow:0 0 40px rgba(255,255,255,0.8);
+margin-bottom:30px;
+}
+
+#typing{
+font-size:28px;
+max-width:600px;
+margin-bottom:40px;
+}
+
+.choice button{
+margin:10px;
+padding:15px 40px;
+font-size:20px;
+border:none;
+border-radius:30px;
+background:white;
+color:#ff4d6d;
+cursor:pointer;
+}
+
+/* страницы */
+
+.page{
+display:none;
+padding:60px 20px;
+}
+
+h1{
+font-size:55px;
+margin-bottom:10px;
+}
+
+.text{
+font-size:22px;
+max-width:700px;
+margin:auto;
+line-height:1.6;
+}
+
+/* карточки */
+
+.card{
+background:rgba(255,255,255,0.15);
+padding:30px;
+border-radius:20px;
+max-width:800px;
+margin:40px auto;
+backdrop-filter:blur(5px);
+}
+
+/* галерея */
+
+.gallery{
+margin-top:30px;
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:20px;
+}
+
+.gallery img{
+width:220px;
+height:220px;
+object-fit:cover;
+border-radius:20px;
+box-shadow:0 10px 25px rgba(0,0,0,0.3);
+cursor:pointer;
+transition:0.3s;
+}
+
+.gallery img:hover{
+transform:scale(1.08);
+}
+
+/* просмотр фото */
+
+#viewer{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.9);
+display:none;
+justify-content:center;
+align-items:center;
+}
+
+#viewer img{
+max-width:90%;
+max-height:90%;
+border-radius:20px;
+}
+
+/* кнопки */
+
+.btn{
+margin-top:30px;
+padding:14px 30px;
+font-size:18px;
+border:none;
+border-radius:30px;
+background:white;
+color:#ff4d6d;
+cursor:pointer;
+}
+
+/* анимация сердца */
+
+.hearts{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+pointer-events:none;
+}
+
+.heart{
+position:absolute;
+font-size:24px;
+animation:fall 5s linear infinite;
+}
+
+@keyframes fall{
+0%{transform:translateY(-100px)}
+100%{transform:translateY(110vh)}
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- вступление -->
+
+<div id="intro">
+
+<img src="старт.jpg" class="mainPhoto">
+
+<div id="typing"></div>
+
+<div class="choice">
+<button onclick="openPage('mom')">Для мамы ❤️</button>
+<button onclick="openPage('grandma')">Для Апашки 🌷</button>
+</div>
+
+</div>
+
+<!-- страница мамы -->
+
+<div id="mom" class="page">
+
+<h1>Мама ❤️</h1>
+
+<div class="card">
+
+<div class="text">
+Поздравляем тебя с 8 марта 🌷<br><br>
+
+Спасибо за твою любовь, заботу и поддержку.  
+Ты самый важный человек в нашей жизни.  
+
+Мы тебя очень любим ❤️
+</div>
+
+<div class="gallery">
+
+<img src="maama.jpg" onclick="openImg(this)">
+<img src="mama2.jpg" onclick="openImg(this)">
+<img src="mama3.jpg" onclick="openImg(this)">
+
+</div>
+
+<button class="btn" onclick="alert('Мама, хотим сказать тебе спасибо за твою любовь, заботу и тепло. Для нас ты самый родной и дорогой человек. Мы очень сильно тебя любим и ценим всё, что ты для нас делаешь. Пусть у тебя всегда будет крепкое здоровье, счастье и много спокойных, радостных дней. Мы всегда рядом и очень тебя любим.❤️')">
+Сказать спасибо ❤️
+</button>
+
+</div>
+
+</div>
+
+<!-- страница бабушки -->
+
+<div id="grandma" class="page">
+
+<h1>Апашка🌷</h1>
+
+<div class="card">
+
+<div class="text">
+Дорогая Апашка!  
+
+Поздравляем тебя с 8 марта 💐  
+
+Спасибо за твою доброту, заботу  
+и вкусную еду 😄  
+
+Мы тебя очень любим ❤️
+</div>
+
+<div class="gallery">
+
+<img src="апа1.jpg" onclick="openImg(this)">
+<img src="апа2.jpg" onclick="openImg(this)">
+<img src="апа3.jpg" onclick="openImg(this)">
+
+</div>
+
+<button class="btn" onclick="alert('Апашка, хотим сказать вам большое спасибо за вашу доброту, мудрость и заботу. Вы для нас очень дорогой и родной человек. Мы вас очень любим и ценим ваше тепло и поддержку. Пусть у вас всегда будет крепкое здоровье, радость и много счастливых лет рядом с нами. ❤️ ❤️')">
+Обнять апашку 🤗
+</button>
+
+</div>
+
+</div>
+
+<!-- просмотр фото -->
+
+<div id="viewer" onclick="closeImg()">
+<img id="viewImg">
+</div>
+
+<div class="hearts" id="hearts"></div>
+
+<script>
+
+/* печатающийся текст */
+
+const text="Этот сайт сделан для двух самых важных людей ❤️"
+let i=0
+
+function typeWriter(){
+if(i<text.length){
+document.getElementById("typing").innerHTML+=text.charAt(i)
+i++
+setTimeout(typeWriter,40)
+}
+}
+
+typeWriter()
+
+/* открыть страницу */
+
+function openPage(page){
+document.getElementById("intro").style.display="none"
+document.getElementById(page).style.display="block"
+}
+
+/* просмотр фото */
+
+function openImg(el){
+document.getElementById("viewer").style.display="flex"
+document.getElementById("viewImg").src=el.src
+}
+
+function closeImg(){
+document.getElementById("viewer").style.display="none"
+}
+
+/* сердца */
+
+function createHeart(){
+const heart=document.createElement("div")
+heart.className="heart"
+heart.innerHTML="❤️"
+heart.style.left=Math.random()*100+"%"
+heart.style.animationDuration=3+Math.random()*3+"s"
+
+document.getElementById("hearts").appendChild(heart)
+
+setTimeout(()=>{
+heart.remove()
+},5000)
+}
+
+setInterval(createHeart,300)
+
+</script>
+
+</body>
+</html>
